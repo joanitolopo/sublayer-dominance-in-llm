@@ -29,7 +29,6 @@ class AlignedRecord:
   pivot_layers: List[WordActivation]
   target_layers: List[WordActivation]
 
-
 @dataclass
 class LanguagePairResult:
   pivot_lang: str
@@ -38,3 +37,8 @@ class LanguagePairResult:
   target_text: str
   aligned_records: List[AlignedRecord]
   unaligned_pivot_indices: List[int]
+  
+@dataclass
+class MergedPairResult:
+  target_lang: str
+  aligned_records: List[AlignedRecord] = field(default_factory=list)
